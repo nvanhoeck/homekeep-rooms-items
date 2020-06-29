@@ -1,6 +1,7 @@
 package com.homekeep.rooms.items.dtos;
 
 import com.homekeep.rooms.items.entities.RoomItemColor;
+import com.sun.istack.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
@@ -16,6 +17,7 @@ public class RoomItemDto {
     private String totalCost;
     private String spendedCost;
     private String amountWanted;
+    @NotNull
     private Long roomId;
     private String image;
     private String urlLink;

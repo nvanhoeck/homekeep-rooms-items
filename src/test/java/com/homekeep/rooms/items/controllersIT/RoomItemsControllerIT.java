@@ -33,7 +33,7 @@ public class RoomItemsControllerIT {
     public void whenFindAll_ReturnsRoomsDtos() {
 
         RoomItemEntity storedRoomItem = this.roomItemRepository.saveAndFlush(SampleDataUtil.buildRoomEntity("test"));
-        List<RoomItemDto> roomItemDtos = roomItemsController.getRoomItems();
+        List<RoomItemDto> roomItemDtos = roomItemsController.getRoomItems(1L);
         assertThat(roomItemDtos).extracting("id", "name").contains(Tuple.tuple(storedRoomItem.getId(), "test"));
     }
 

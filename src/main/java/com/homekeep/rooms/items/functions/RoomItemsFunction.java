@@ -11,14 +11,14 @@ import org.springframework.cloud.function.adapter.azure.AzureSpringBootRequestHa
 /**
  * Azure Functions with HTTP Trigger.
  */
-public class RoomItemsFunction extends AzureSpringBootRequestHandler<Void, List<RoomItemDto>> {
+public class RoomItemsFunction extends AzureSpringBootRequestHandler<Long, List<RoomItemDto>> {
     @FunctionName("get-room-items")
     public HttpResponseMessage run(
-            @HttpTrigger(name = "req", route = "room-items", methods = {HttpMethod.GET}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
+            @HttpTrigger(name = "req", route = "room-items", methods = {HttpMethod.GET}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Long> request,
             final ExecutionContext context) {
         context.getLogger().info("Java HTTP trigger processed a request.");
         try {
-            return request.createResponseBuilder(HttpStatus.OK).body(handleRequest(context)).build();
+            return request.createResponseBuilder(HttpStatus.OK).body(handleRequest(request.getBody(), context)).build();
         } catch (Exception e) {
             context.getLogger().log(Level.ALL, e.toString());
            return request.createResponseBuilder(HttpStatus.INTERNAL_SERVER_ERROR).body(e.toString()).build();

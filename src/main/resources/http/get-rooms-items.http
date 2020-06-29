@@ -1,0 +1,4 @@
+GET http://localhost:7002/rooms-items
+Accept: application/json
+
+###

@@ -5,7 +5,7 @@ import com.homekeep.rooms.items.dtos.RoomItemDto;
 import java.util.List;
 
 public interface RoomItemManager {
-    List<RoomItemDto> findAll(long l);
+    List<RoomItemDto> findAll(long roomId);
 
     RoomItemDto findById(Long id);
 

@@ -15,7 +15,9 @@
             <column name="spended_cost" type="INT"/>
             <column name="amount_wanted" type="INT"/>
             <column name="amount_owned" type="INT"/>
-            <column name="room_id" type="INT"/>
+            <column name="room_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
             <column name="image" type="VARCHAR(255)"/>
             <column name="url_link" type="VARCHAR(255)"/>
             <column name="locked" type="BOOLEAN"/>

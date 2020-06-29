@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RoomItemService {
-    List<RoomItemEntity> findAll(long l);
+    List<RoomItemEntity> findAll(long roomId);
 
     Optional<RoomItemEntity> findById(Long id);
 

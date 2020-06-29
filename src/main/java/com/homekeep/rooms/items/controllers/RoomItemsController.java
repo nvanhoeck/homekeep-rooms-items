@@ -18,8 +18,8 @@ public class RoomItemsController {
         this.roomItemManager = roomItemManager;
     }
 
-    public List<RoomItemDto> getRoomItems() {
-        return this.roomItemManager.findAll(1L);
+    public List<RoomItemDto> getRoomItems(Long roomId) {
+        return this.roomItemManager.findAll(roomId);
     }
 
     public RoomItemDto getRoomItem(@PathVariable("id") Long id) {

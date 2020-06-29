@@ -26,8 +26,8 @@ public class RoomItemManagerImpl implements RoomItemManager {
     }
 
     @Override
-    public List<RoomItemDto> findAll(long l) {
-        return this.roomItemService.findAll(1L).stream()
+    public List<RoomItemDto> findAll(long roomId) {
+        return this.roomItemService.findAll(roomId).stream()
                 .map(roomMapper::map)
                 .collect(Collectors.toList());
 

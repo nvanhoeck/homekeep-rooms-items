@@ -1,10 +1,8 @@
 package com.homekeep.rooms.items.entities;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 
@@ -25,7 +23,7 @@ public class RoomItemEntity {
     private String spendedCost;
     @Column
     private String amountWanted;
-    @Column
+    @Column(nullable = false)
     private Long roomId;
     @Column
     private String image;

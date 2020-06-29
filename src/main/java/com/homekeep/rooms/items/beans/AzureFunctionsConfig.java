@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 @Configuration
 public class AzureFunctionsConfig {
     @Bean(name = "get-rooms-items")
-    public Supplier<List<RoomItemDto>> roomItems(RoomItemsController roomItemsController) {
+    public Function<Long, List<RoomItemDto>> roomItems(RoomItemsController roomItemsController) {
         return roomItemsController::getRoomItems;
     }
 

@@ -18,8 +18,8 @@ public class RoomItemServiceImpl implements RoomItemService {
     }
 
     @Override
-    public List<RoomItemEntity> findAll(long l) {
-        return this.roomItemRepository.findAll();
+    public List<RoomItemEntity> findAll(long roomId) {
+        return this.roomItemRepository.findAllByRoomId(roomId);
     }
 
     @Override

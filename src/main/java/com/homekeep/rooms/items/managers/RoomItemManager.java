@@ -14,4 +14,6 @@ public interface RoomItemManager {
     boolean delete(Long id);
 
     RoomItemDto addRoomItem(RoomItemDto roomItemDto);
+
+    List<RoomItemDto> findAll(List<Long> roomIds);
 }

@@ -11,6 +11,7 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,20 @@ public class RoomItemManagerImpl implements RoomItemManager {
         return this.roomItemService.findAll(roomId).stream()
                 .map(roomMapper::map)
                 .collect(Collectors.toList());
+
+    }
+
+    //TODO tests
+    @Override
+    public List<RoomItemDto> findAll(List<Long> roomIds) {
+        return roomIds.stream()
+                .map(this.roomItemService::findAll)
+                .reduce((roomItemEntities, roomItemEntitiesNext) -> {
+                    roomItemEntities.addAll(roomItemEntitiesNext);
+                    return roomItemEntities;
+                })
+                .map(roomItemEntities -> roomItemEntities.stream().map(roomMapper::map).collect(Collectors.toList()))
+                .orElse(Collections.emptyList());
 
     }
 

@@ -13,7 +13,7 @@ import org.springframework.cloud.function.adapter.azure.AzureSpringBootRequestHa
 public class AddRoomItemFunction extends AzureSpringBootRequestHandler<RoomItemDto, RoomItemDto> {
     @FunctionName("add-room-item")
     public HttpResponseMessage run(
-            @HttpTrigger(name = "req", route = "room-items", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<RoomItemDto> request,
+            @HttpTrigger(name = "req", route = "room-items/add", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<RoomItemDto> request,
             final ExecutionContext context) {
         context.getLogger().info("Java HTTP trigger processed a request.");
         try {

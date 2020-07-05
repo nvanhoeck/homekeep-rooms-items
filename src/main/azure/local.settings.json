@@ -4,7 +4,7 @@
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=storageaccounthomek9eb7;AccountKey=3Kocuxw8Jt0i78zU3GMwP9WiCBc35H55QSlxYCuU85y/2CPmK1VCMwL6KOKUcjzd3ZbDhlAF4SZUkkMbOjfEzw==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "java",
     "AzureWebJobsDashboard": "",
-    "JAVA_OPTS": "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+    "JAVA_OPTS": "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
   },
   "Host": {
     "LocalHttpPort": 7002,

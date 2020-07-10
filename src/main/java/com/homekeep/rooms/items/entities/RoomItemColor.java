@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity(name = "Room_Item_Color")
-public class RoomItemColor {
+public class RoomItemColor implements Comparable<RoomItemColor>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -16,4 +16,9 @@ public class RoomItemColor {
     @ManyToOne
     @JoinColumn(name = "room_item_id")
     private RoomItemEntity roomItem;
+
+    @Override
+    public int compareTo(RoomItemColor o) {
+        return this.value.hashCode() - o.getValue().hashCode();
+    }
 }

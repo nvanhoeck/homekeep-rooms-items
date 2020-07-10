@@ -3,7 +3,10 @@ package com.homekeep.rooms.items.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 
 @Data
@@ -23,6 +26,8 @@ public class RoomItemEntity {
     private String spendedCost;
     @Column
     private String amountWanted;
+    @Column
+    private String amountOwned;
     @Column(nullable = false)
     private Long roomId;
     @Column
@@ -33,10 +38,10 @@ public class RoomItemEntity {
     private Boolean locked;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "Room_Item_Alternatives", joinColumns = @JoinColumn(name = "Room_Item_Id"))
-    private Set<Long> alternatives;
+    private Set<Long> alternatives = new HashSet<>();
     @Column
     private Long alternativeOf;
     @Column
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "roomItem", cascade = CascadeType.ALL)
-    private Set<RoomItemColor> colors;
+    private Set<RoomItemColor> colors = new HashSet<>();
 }

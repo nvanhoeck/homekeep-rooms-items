@@ -16,6 +16,11 @@ public class AzureFunctionsConfig {
         return roomItemsController::getRoomItems;
     }
 
+    @Bean(name = "get-all-rooms-items")
+    public Function<Long[], List<RoomItemDto>> getAllRoomsItems(RoomItemsController roomItemsController) {
+        return roomItemsController::getAllRoomsItems;
+    }
+
     @Bean(name = "add-room-item")
     Function<RoomItemDto, RoomItemDto> addRoomItem(RoomItemsController roomItemsController) {return roomItemsController::addRoomItem;}
 

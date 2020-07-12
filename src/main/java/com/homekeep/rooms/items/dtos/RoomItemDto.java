@@ -13,16 +13,17 @@ import java.util.Set;
 public class RoomItemDto {
     private Long id;
     private String name;
-    private String costPerItem;
-    private String totalCost;
-    private String spendedCost;
-    private String amountWanted;
+    private Double costPerItem;
+    private Double totalCost;
+    private Double spendedCost;
+    private Integer amountWanted;
+    private Integer amountOwned;
     @NotNull
     private Long roomId;
     private String image;
     private String urlLink;
     private Boolean locked;
-    private Set<Long> alternatives;
+    private Long[] alternatives;
     private Long alternativeOf;
-    private Set<RoomItemColor> colors;
+    private RoomItemColor[] colors;
 }

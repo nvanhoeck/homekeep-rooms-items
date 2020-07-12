@@ -5,6 +5,7 @@ import com.homekeep.rooms.items.managers.RoomItemManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -20,6 +21,10 @@ public class RoomItemsController {
 
     public List<RoomItemDto> getRoomItems(Long roomId) {
         return this.roomItemManager.findAll(roomId);
+    }
+
+    public List<RoomItemDto> getAllRoomsItems(Long[] roomIds) {
+        return this.roomItemManager.findAll(Arrays.asList(roomIds));
     }
 
     public RoomItemDto getRoomItem(@PathVariable("id") Long id) {

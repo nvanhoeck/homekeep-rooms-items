@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="Niko Van Hoeck" id="1-update-column-types">
+        <modifyDataType tableName="Room_Item" columnName="cost_per_item" newDataType="DECIMAL(10,2)"/>
+        <modifyDataType tableName="Room_Item" columnName="total_cost" newDataType="DECIMAL(10,2)"/>
+        <modifyDataType tableName="Room_Item" columnName="spended_cost" newDataType="DECIMAL(10,2)"/>
+        <modifyDataType tableName="Room_Item" columnName="amount_wanted" newDataType="INT"/>
+        <modifyDataType tableName="Room_Item" columnName="amount_owned" newDataType="INT"/>
+    </changeSet>
+</databaseChangeLog>

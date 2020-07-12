@@ -77,7 +77,7 @@ pipeline {
 
             steps {
                 // Get some code from a GitHub repository
-                bat "git checkout master"
+                bat "git checkout origin/master"
                 bat "git merge origin/develop -X theirs"
                 bat "git commit -am ${NEW_VERSION}"
                 bat "git tag -a ${NEW_VERSION} -m ${NEW_VERSION}"

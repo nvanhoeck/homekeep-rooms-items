@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NEW_VERSION = '0.0.12'
+        NEW_VERSION = '0.0.13'
         ORG = 'homekeep'
         APP_NAME = 'homekeep-rooms-items'
     }
@@ -72,7 +72,6 @@ pipeline {
             when {
                 expression {
                     BRANCH_NAME == 'develop'
-                    RELEASED == 'Yes'
                 }
             }
 

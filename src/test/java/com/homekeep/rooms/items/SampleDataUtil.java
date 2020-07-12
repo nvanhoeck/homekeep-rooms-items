@@ -31,6 +31,11 @@ public class SampleDataUtil {
         roomItemDto.setId(id);
         roomItemDto.setName(name);
         roomItemDto.setRoomId(1L);
+        roomItemDto.setCostPerItem(0.0);
+        roomItemDto.setTotalCost(0.0);
+        roomItemDto.setSpendedCost(0.0);
+        roomItemDto.setAmountOwned(0);
+        roomItemDto.setAmountWanted(0);
         roomItemDto.setAlternatives(new Long[]{});
         roomItemDto.setColors(new RoomItemColor[]{});
         return roomItemDto;
@@ -42,6 +47,11 @@ public class SampleDataUtil {
         roomItemDto.setRoomId(1L);
         roomItemDto.setAlternatives(new Long[]{});
         roomItemDto.setColors(new RoomItemColor[]{});
+        roomItemDto.setCostPerItem(0.0);
+        roomItemDto.setTotalCost(0.0);
+        roomItemDto.setSpendedCost(0.0);
+        roomItemDto.setAmountOwned(0);
+        roomItemDto.setAmountWanted(0);
         return roomItemDto;
     }
 
@@ -55,16 +65,15 @@ public class SampleDataUtil {
         RoomItemEntity roomItemEntity = new RoomItemEntity();
         roomItemEntity.setAlternatives(new TreeSet<>());
         roomItemEntity.setColors(new TreeSet<>());
-        roomItemEntity.setRoomId(1L);
         roomItemEntity.setName("Test");
         roomItemEntity.setAlternativeOf(1L);
-        roomItemEntity.setAmountWanted("1");
-        roomItemEntity.setAmountOwned("1");
-        roomItemEntity.setCostPerItem("1.25");
-        roomItemEntity.setTotalCost("1.25");
+        roomItemEntity.setAmountWanted(1);
+        roomItemEntity.setAmountOwned(1);
+        roomItemEntity.setCostPerItem(1.25);
+        roomItemEntity.setTotalCost(1.25);
         roomItemEntity.setImage("img.jpg");
         roomItemEntity.setLocked(false);
-        roomItemEntity.setSpendedCost("0.0");
+        roomItemEntity.setSpendedCost(0.0);
         roomItemEntity.setUrlLink("www.google.be");
         return roomItemEntity;
     }

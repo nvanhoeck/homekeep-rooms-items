@@ -72,6 +72,7 @@ public class RoomItemManagerTest {
     public void whenFullMapping() {
         RoomItemDto roomItemDto = SampleDataUtil.buildFullRoomItemDto();
         RoomItemEntity roomItemEntity = SampleDataUtil.buildFullRoomItemEntity();
+        roomItemEntity.setRoomId(1L);
         when(roomItemService.updateRoomItem(roomItemEntity)).thenReturn(roomItemEntity);
         RoomItemDto mappedRoomItem = this.fixture.updateRoomItem(roomItemDto);
         assertThat(mappedRoomItem).isEqualTo(roomItemDto);

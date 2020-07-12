@@ -33,8 +33,6 @@ public class RoomItemManagerImpl implements RoomItemManager {
                     @Override
                     public void mapAtoB(RoomItemEntity roomItemEntity, RoomItemDto roomItemDto, MappingContext context) {
                         mapperFacade.map(roomItemEntity, roomItemDto, context);
-//                        mapperFacade.map(roomItemEntity.getCostPerItem(), String.valueOf(roomItemDto.getCostPerItem()), context);
-//                        mapperFacade.map(roomItemEntity.getCostPerItem(), String.valueOf(roomItemDto.getTotalCost()), context);
                         mapperFacade.mapAsArray(roomItemDto.getAlternatives(), roomItemEntity.getAlternatives(), Long.class);
                         mapperFacade.mapAsArray(roomItemDto.getColors(), roomItemEntity.getColors(), RoomItemColor.class);
                     }
@@ -42,8 +40,6 @@ public class RoomItemManagerImpl implements RoomItemManager {
                     @Override
                     public void mapBtoA(RoomItemDto roomItemDto, RoomItemEntity roomItemEntity, MappingContext context) {
                         mapperFacade.map(roomItemDto, roomItemEntity, context);
-//                        mapperFacade.map(roomItemDto.getCostPerItem(), Double.parseDouble(roomItemEntity.getCostPerItem()), context);
-//                        mapperFacade.map(roomItemDto.getTotalCost(),  Double.parseDouble(roomItemEntity.getCostPerItem()), context);
                         if(Objects.isNull(roomItemDto.getAlternatives())) {
                             mapperFacade.mapAsSet(new Long[]{}, Long.class);
                         } else {

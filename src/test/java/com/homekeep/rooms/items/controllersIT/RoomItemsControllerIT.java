@@ -62,10 +62,11 @@ public class RoomItemsControllerIT {
 
     @Test
     public void whenFindAllRoomItem_Return() {
+        this.roomItemRepository.deleteAll();
         RoomItemEntity roomItemEntityBeforeSave = SampleDataUtil.buildFullRoomItemEntity();
         roomItemEntityBeforeSave.setRoomId(1L);
-        RoomItemEntity roomItemEntity = this.roomItemRepository.saveAndFlush(roomItemEntityBeforeSave);
-        List<RoomItemDto> allRoomsItems = roomItemsController.getAllRoomsItems(new Long[]{roomItemEntity.getId()});
+        RoomItemEntity roomItemEntity = this.roomItemRepository.save(roomItemEntityBeforeSave);
+        List<RoomItemDto> allRoomsItems = roomItemsController.getAllRoomsItems(new Long[]{roomItemEntity.getRoomId()});
         assertThat(allRoomsItems.get(0)).isEqualToIgnoringGivenFields(roomItemEntity, "alternatives", "colors");
     }
 }

@@ -19,15 +19,15 @@ public class RoomItemEntity {
     @Column
     private String name;
     @Column
-    private double costPerItem;
+    private Double costPerItem;
     @Column
-    private double totalCost;
+    private Double totalCost;
     @Column
-    private double spendedCost;
+    private Double spendedCost;
     @Column
-    private int amountWanted;
+    private Integer amountWanted;
     @Column
-    private int amountOwned;
+    private Integer amountOwned;
     @Column(nullable = false)
     private Long roomId;
     @Column

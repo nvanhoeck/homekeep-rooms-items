@@ -15,6 +15,7 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -32,6 +33,12 @@ public class RoomItemManagerImpl implements RoomItemManager {
                 .customize(new CustomMapper<RoomItemEntity, RoomItemDto>() {
                     @Override
                     public void mapAtoB(RoomItemEntity roomItemEntity, RoomItemDto roomItemDto, MappingContext context) {
+                        if(Objects.isNull(roomItemDto.getAlternatives())) {
+                            roomItemEntity.setAlternatives(new HashSet<>());
+                        }
+                        if(Objects.isNull(roomItemDto.getColors())) {
+                            roomItemEntity.setColors(new HashSet<>());
+                        }
                         mapperFacade.map(roomItemEntity, roomItemDto, context);
                         mapperFacade.mapAsArray(roomItemDto.getAlternatives(), roomItemEntity.getAlternatives(), Long.class);
                         mapperFacade.mapAsArray(roomItemDto.getColors(), roomItemEntity.getColors(), RoomItemColor.class);

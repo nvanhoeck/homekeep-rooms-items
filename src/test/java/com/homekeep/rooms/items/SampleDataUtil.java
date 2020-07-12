@@ -11,6 +11,11 @@ public class SampleDataUtil {
         RoomItemEntity roomItemEntity = new RoomItemEntity();
         roomItemEntity.setName(name);
         roomItemEntity.setRoomId(1L);
+        roomItemEntity.setCostPerItem(0.0);
+        roomItemEntity.setTotalCost(0.0);
+        roomItemEntity.setSpendedCost(0.0);
+        roomItemEntity.setAmountOwned(0);
+        roomItemEntity.setAmountWanted(0);
         roomItemEntity.setAlternatives(new TreeSet<>());
         roomItemEntity.setColors(new TreeSet<>());
         return roomItemEntity;
@@ -21,6 +26,11 @@ public class SampleDataUtil {
         roomItemEntity.setId(id);
         roomItemEntity.setName(name);
         roomItemEntity.setRoomId(1L);
+        roomItemEntity.setCostPerItem(0.0);
+        roomItemEntity.setTotalCost(0.0);
+        roomItemEntity.setSpendedCost(0.0);
+        roomItemEntity.setAmountOwned(0);
+        roomItemEntity.setAmountWanted(0);
         roomItemEntity.setAlternatives(new TreeSet<>());
         roomItemEntity.setColors(new TreeSet<>());
         return roomItemEntity;

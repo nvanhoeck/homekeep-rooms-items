@@ -42,7 +42,7 @@ public class OrikaBeanMapperConfig extends ConfigurableMapper {
     @Override
     protected void configureFactoryBuilder(final DefaultMapperFactory.Builder factoryBuilder) {
         // customize the factoryBuilder as needed
-        factoryBuilder.mapNulls(true).build();
+        factoryBuilder.mapNulls(false).build();
     }
 
     private void addCustomMapperAndConverters() {
@@ -60,8 +60,8 @@ public class OrikaBeanMapperConfig extends ConfigurableMapper {
     private void addMapper(final Mapper<?, ?> mapper) {
         mapperFactory.classMap(mapper.getAType(), mapper.getBType())
                 .byDefault()
-                .mapNulls(true)
-                .mapNullsInReverse(true)
+                .mapNulls(false)
+                .mapNullsInReverse(false)
                 .customize((Mapper) mapper)
                 .register();
     }

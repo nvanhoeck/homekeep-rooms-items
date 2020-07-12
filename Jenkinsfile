@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NEW_VERSION = '0.0.18'
+        NEW_VERSION = '0.0.20'
         ORG = 'homekeep'
         APP_NAME = 'homekeep-rooms-items'
     }
@@ -72,12 +72,13 @@ pipeline {
             when {
                 expression {
                     BRANCH_NAME == 'develop'
+                    RELEASED == 'true'
                 }
             }
 
             steps {
                 // Get some code from a GitHub repository
-                bat "git checkout origin/master"
+                bat "git checkout master"
                 bat "git commit -am ${NEW_VERSION}"
                 bat "git tag -a ${NEW_VERSION} -m ${NEW_VERSION}"
                 bat "git merge origin/develop"

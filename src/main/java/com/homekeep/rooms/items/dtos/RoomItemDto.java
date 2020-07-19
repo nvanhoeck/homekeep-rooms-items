@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 
+import java.sql.Blob;
 import java.util.Set;
 
 @Immutable

@@ -1,4 +1,6 @@
-GET http://localhost:7002/rooms-items
+POST http://localhost:7002/api/room-items
 Accept: application/json
+
+[]
 
 ###

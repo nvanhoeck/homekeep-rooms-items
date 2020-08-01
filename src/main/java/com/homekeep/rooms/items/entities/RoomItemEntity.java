@@ -3,6 +3,7 @@ package com.homekeep.rooms.items.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

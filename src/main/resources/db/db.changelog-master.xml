@@ -6,5 +6,4 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <include  file="changelog/0-intial.xml" relativeToChangelogFile="true"/>
     <include  file="changelog/1-update_column_types.xml" relativeToChangelogFile="true"/>
-    <include  file="changelog/2-update_image_column_type.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

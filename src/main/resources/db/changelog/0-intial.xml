@@ -18,7 +18,7 @@
             <column name="room_id" type="INT">
                 <constraints nullable="false"/>
             </column>
-            <column name="image" type="VARCHAR(255)"/>
+            <column name="image" type="LONGBLOB"/>
             <column name="url_link" type="VARCHAR(255)"/>
             <column name="locked" type="BOOLEAN"/>
             <column name="alternative_of" type="INT"/>

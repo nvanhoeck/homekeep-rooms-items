@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.homekeep</groupId>
     <artifactId>rooms-items</artifactId>
-    <version>0.0.28</version>
+    <version>0.0.29</version>
     <name>rooms-items</name>
     <description>Rooms-items microservice for the homekeep app</description>
 

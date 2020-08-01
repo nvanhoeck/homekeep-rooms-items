@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NEW_VERSION = '0.0.26'
+        NEW_VERSION = '0.0.27'
         ORG = 'homekeep'
         APP_NAME = 'homekeep-room-items'
     }

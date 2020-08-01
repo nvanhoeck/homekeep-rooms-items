@@ -1,0 +1,6 @@
+POST http://localhost:7002/api/room-items/add
+Accept: application/json
+
+{"name":"BEKANT Standing Desk","amountWanted":1,"amountOwned":0,"costPerItem":519,"totalCost":519,"spendedCost":0,"roomId":48,"locked":false,"colors":[]}
+
+###
